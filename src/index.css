@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global dark mode styles */
+body {
+  @apply dark:bg-gray-900 bg-white bg-white dark:bg-gray-900;
+}
+
+/* Button base */
+.btn {
+  @apply font-bold py-2 px-4 rounded transition duration-300;
+}
+
+/* Warna tombol */
+.btn-blue {
+  @apply bg-blue-500 text-white hover:bg-transparent hover:text-blue-500 hover:border hover:border-blue-500;
+}
+.btn-green {
+  @apply bg-green-500 text-white hover:bg-transparent hover:text-green-500 hover:border hover:border-green-500;
+}
+.btn-yellow {
+  @apply bg-yellow-500 text-white hover:bg-transparent hover:text-yellow-500 hover:border hover:border-yellow-500;
+}
