@@ -43,6 +43,20 @@ Website sederhana untuk menampilkan dan mengelola daftar tugas (todo list) mengg
 
 ---
 
+📘 **Cara Penggunaan**
+
+1. Ketik tugas di input yang tersedia, lalu klik tombol **Tambah**.
+2. Jika input kosong atau kurang dari 3 karakter, akan muncul notifikasi error.
+3. Klik tugas untuk menandainya sebagai selesai (ceklist).
+4. Klik tugas untuk menampilkan tombol aksi:
+
+   * **Selesai** untuk menandai tugas selesai.
+   * **Hapus** untuk menghapus tugas, disertai konfirmasi dari SweetAlert.
+5. Gunakan filter di atas daftar untuk menampilkan semua tugas, hanya yang selesai, atau yang belum selesai.
+6. Klik tombol **🌙 Dark / ☀️ Light** untuk mengganti mode tampilan.
+
+---
+
 📂 **Struktur Project**
 
 ```
@@ -74,3 +88,5 @@ penampilan-data-tugas/
 📹 [Tautan ke Video Demo](https://youtu.be/e51Iq1xyDJI)
 
 ```
+
+---
