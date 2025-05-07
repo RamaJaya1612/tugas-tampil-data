@@ -39,7 +39,6 @@ Website sederhana untuk menampilkan dan mengelola daftar tugas (todo list) mengg
 
 4. Buka di browser:
    [http://localhost:3000](http://localhost:3000)
-````
 
 ---
 
@@ -90,3 +89,5 @@ penampilan-data-tugas/
 ```
 
 ---
+
+````
