@@ -6,22 +6,24 @@ Website sederhana untuk menampilkan dan mengelola daftar tugas (todo list) mengg
 
 ## 🚀 Fitur Utama
 
-- Tambah tugas dengan validasi (minimal 3 karakter)  
-- SweetAlert2 notifikasi: error & success  
-- Dark mode toggle  
-- Filter tugas: Semua / Selesai / Belum  
-- Checklist tugas (klik untuk tandai selesai)  
-- Tombol “Selesai” & “Hapus” hanya muncul saat item diklik  
-- Responsif & rapi dengan Tailwind CSS  
+* Tambah tugas dengan validasi (minimal 3 karakter)
+* SweetAlert2 notifikasi: error & success
+* Dark mode toggle
+* Filter tugas: Semua / Selesai / Belum
+* Checklist tugas (klik untuk tandai selesai)
+* Tombol “Selesai” & “Hapus” hanya muncul saat item diklik
+* Responsif & rapi dengan Tailwind CSS
 
 ---
 
 ## 🛠️ Instalasi
 
-1. Clone repo:  
+1. Clone repo:
+
    ```bash
    git clone https://github.com/username/penampilan-data-tugas.git
    cd penampilan-data-tugas
+   ```
 
 2. Install dependencies:
 
@@ -39,6 +41,10 @@ Website sederhana untuk menampilkan dan mengelola daftar tugas (todo list) mengg
 
 4. Buka di browser:
    [http://localhost:3000](http://localhost:3000)
+
+### ⚠️ Catatan
+
+Folder `node_modules` tidak disertakan dalam versi ZIP karena ukurannya besar. Setelah mengekstrak, **jalankan `npm install`** untuk mengunduh kembali semua dependensi.
 
 ---
 
@@ -85,4 +91,5 @@ penampilan-data-tugas/
 ## 🎬 Video Demo
 
 📹 [Tautan ke Video Demo](https://youtu.be/e51Iq1xyDJI)
-````
+
+---
