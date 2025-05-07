@@ -85,7 +85,4 @@ penampilan-data-tugas/
 ## 🎬 Video Demo
 
 📹 [Tautan ke Video Demo](https://youtu.be/e51Iq1xyDJI)
-
-```
-
 ````
