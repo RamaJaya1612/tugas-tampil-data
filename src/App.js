@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 
 const App = () => {
@@ -7,12 +7,32 @@ const App = () => {
   const [newTask, setNewTask] = useState("");
   const [error, setError] = useState("");
   const [filter, setFilter] = useState("all");
-  const [activeIndex, setActiveIndex] = useState(null); // untuk cek item yg diklik
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  // 🔁 Ambil data dari API publik saat halaman dimuat
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/todos?_limit=10")
+      .then((res) => res.json())
+      .then((data) => {
+        const mapped = data.map((item) => ({
+          title: item.title,
+          completed: item.completed
+        }));
+        setTasks(mapped);
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: "Gagal ambil data",
+          text: err.message,
+        });
+      });
+  }, []);
 
   const handleAddTask = (e) => {
     e.preventDefault();
     const trimmed = newTask.trim();
-  
+
     if (!trimmed) {
       setError("");
       Swal.fire({
@@ -24,7 +44,7 @@ const App = () => {
       });
       return;
     }
-  
+
     if (trimmed.length < 3) {
       setError("");
       Swal.fire({
@@ -36,11 +56,11 @@ const App = () => {
       });
       return;
     }
-  
+
     setTasks([...tasks, { title: newTask, completed: false }]);
     setNewTask("");
     setError("");
-  
+
     Swal.fire({
       icon: "success",
       title: "Berhasil!",
@@ -49,7 +69,6 @@ const App = () => {
       showConfirmButton: false,
     });
   };
-  
 
   const handleDeleteTask = (indexToDelete) => {
     Swal.fire({
@@ -59,14 +78,28 @@ const App = () => {
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Hapus',
+      confirmButtonText: 'Ya, hapus!',
+      cancelButtonText: 'Batal'
     }).then((result) => {
       if (result.isConfirmed) {
-        const updatedTasks = [...tasks];
-        updatedTasks.splice(indexToDelete, 1);
-        setTasks(updatedTasks);
+        Swal.fire({
+          title: 'Konfirmasi ulang',
+          text: 'Apakah kamu benar-benar yakin?',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonColor: '#d33',
+          cancelButtonColor: '#3085d6',
+          confirmButtonText: 'Ya, benar-benar hapus!',
+          cancelButtonText: 'Batal'
+        }).then((finalConfirm) => {
+          if (finalConfirm.isConfirmed) {
+            const updatedTasks = [...tasks];
+            updatedTasks.splice(indexToDelete, 1);
+            setTasks(updatedTasks);
 
-        Swal.fire('Dihapus!', 'Tugas berhasil dihapus.', 'success');
+            Swal.fire('Dihapus!', 'Tugas berhasil dihapus.', 'success');
+          }
+        });
       }
     });
   };
@@ -75,7 +108,7 @@ const App = () => {
     const updatedTasks = [...tasks];
     updatedTasks[index].completed = !updatedTasks[index].completed;
     setTasks(updatedTasks);
-    setActiveIndex(null); // tutup menu setelah toggle
+    setActiveIndex(null);
   };
 
   const filteredTasks = tasks.filter((task) => {
@@ -88,7 +121,6 @@ const App = () => {
     <div className={darkMode ? "dark" : ""}>
       <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white p-6 transition-colors duration-300">
         <div className="max-w-xl mx-auto space-y-6">
-          {/* Header */}
           <div className="flex justify-between items-center">
             <h1 className="text-3xl font-bold">📋 Penampilan Data Tugas</h1>
             <button
@@ -99,7 +131,6 @@ const App = () => {
             </button>
           </div>
 
-          {/* Form tambah tugas */}
           <form onSubmit={handleAddTask} className="flex gap-2">
             <input
               type="text"
@@ -116,10 +147,8 @@ const App = () => {
             </button>
           </form>
 
-          {/* Validasi */}
           {error && <p className="text-red-500">{error}</p>}
 
-          {/* Filter */}
           <div className="flex gap-2 mt-2">
             <button
               onClick={() => setFilter("all")}
@@ -141,7 +170,6 @@ const App = () => {
             </button>
           </div>
 
-          {/* Tugas */}
           <div className="grid gap-3">
             {filteredTasks.map((task, index) => (
               <div
@@ -158,7 +186,6 @@ const App = () => {
                   {task.completed && <span className="text-green-500 font-bold">✔</span>}
                 </div>
 
-                {/* Tombol muncul saat diklik */}
                 {activeIndex === index && (
                   <div className="flex gap-2 mt-2">
                     <button
