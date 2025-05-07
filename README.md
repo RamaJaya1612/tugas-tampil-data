@@ -1,8 +1,3 @@
-Berikut versi README kamu yang sudah aku tambahkan tautan ke video demo-nya di bagian akhir:
-
----
-
-````md
 # 📋 Penampilan Data Tugas
 
 Website sederhana untuk menampilkan dan mengelola daftar tugas (todo list) menggunakan React, Tailwind CSS, dan SweetAlert2. Proyek ini juga dilengkapi fitur dark mode, form validasi, filter tugas, penghapusan tugas, dan tombol aksi yang muncul saat item diklik.
