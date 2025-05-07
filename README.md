@@ -1,52 +1,54 @@
+Berikut versi README kamu yang sudah aku tambahkan tautan ke video demo-nya di bagian akhir:
+
+---
+
+````md
 # 📋 Penampilan Data Tugas
 
-**Penampilan Data Tugas** adalah aplikasi web sederhana berbasis **React.js** yang berfungsi untuk mencatat, menandai, dan mengelola daftar tugas (*todo list*). Aplikasi ini menggunakan **Tailwind CSS** untuk tampilan responsif, serta **SweetAlert2** untuk notifikasi interaktif. Dilengkapi dengan fitur *dark mode*, validasi input, filter tugas, dan aksi dinamis saat item diklik.
+Website sederhana untuk menampilkan dan mengelola daftar tugas (todo list) menggunakan React, Tailwind CSS, dan SweetAlert2. Proyek ini juga dilengkapi fitur dark mode, form validasi, filter tugas, penghapusan tugas, dan tombol aksi yang muncul saat item diklik.
 
 ---
 
 ## 🚀 Fitur Utama
 
-* Tambah tugas dengan validasi input (minimal 3 karakter)
-* Notifikasi interaktif via **SweetAlert2** (berhasil/gagal)
-* Toggle **Dark Mode** (🌙 / ☀️)
-* Filter tugas: Semua, Selesai, Belum
-* Checklist tugas: klik untuk tandai selesai
-* Aksi dinamis: tombol "Selesai" dan "Hapus" hanya muncul saat item diklik
-* Tampilan bersih, modern, dan responsif via **TailwindCSS**
+- Tambah tugas dengan validasi (minimal 3 karakter)  
+- SweetAlert2 notifikasi: error & success  
+- Dark mode toggle  
+- Filter tugas: Semua / Selesai / Belum  
+- Checklist tugas (klik untuk tandai selesai)  
+- Tombol “Selesai” & “Hapus” hanya muncul saat item diklik  
+- Responsif & rapi dengan Tailwind CSS  
 
 ---
 
 ## 🛠️ Instalasi
 
-### 1. Clone Repository
+1. Clone repo:  
+   ```bash
+   git clone https://github.com/username/penampilan-data-tugas.git
+   cd penampilan-data-tugas
+````
 
-```bash
-git clone https://github.com/RamaJaya1612/tugas-tampil-data.git
-cd penampilan-data-tugas
-```
+2. Install dependencies:
 
-### 2. Install Dependensi
+   ```bash
+   npm install
+   ```
 
-```bash
-npm install
-```
+3. Jalankan aplikasi:
 
-### 3. Jalankan Aplikasi
+   ```bash
+   npm start
+   ```
 
-```bash
-npm start
-```
+   Atau bisa juga langsung klik *debug* di bagian "script" pada `package.json`.
 
-Atau gunakan menu *"Debug"* dari editor dengan menjalankan script yang tersedia di `package.json`.
-
-### 4. Akses Aplikasi
-
-Buka di browser melalui:
-[http://localhost:3000](http://localhost:3000)
+4. Buka di browser:
+   [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 📂 Struktur Direktori
+📂 **Struktur Project**
 
 ```
 penampilan-data-tugas/
@@ -64,30 +66,16 @@ penampilan-data-tugas/
 
 ---
 
-## ⚙ Cara Kustomisasi
+🔧 **Cara Kustomisasi**
 
-| Komponen       | Penjelasan                                                     |
-| -------------- | -------------------------------------------------------------- |
-| Judul Aplikasi | Ubah pada `App.jsx` di bagian `<h1 className="...">`           |
-| Validasi Input | Ubah atau tambahkan aturan di fungsi `handleAddTask`           |
-| Warna & Gaya   | Edit langsung class Tailwind di JSX atau diatur di `index.css` |
+* Ubah judul di `App.jsx` pada elemen `<h1 className="…">…</h1>`.
+* Atur aturan validasi di fungsi `handleAddTask`.
+* Sesuaikan warna tombol di `index.css` atau lewat class Tailwind langsung di JSX.
 
 ---
 
-## 📦 Dependensi
+## 🎬 Video Demo
 
-| Library      | Versi       |
-| ------------ | ----------- |
-| React        | 18.x        |
-| Tailwind CSS | 3.x         |
-| SweetAlert2  | ^11.x (CDN) |
+📹 [Tautan ke Video Demo](https://youtu.be/e51Iq1xyDJI)
 
----
-
-## 🎬 Video Demo (Opsional)
-
-Jika kamu ingin menambahkan video demo:
-
-📹 [Tautan ke Video Demo](https://contoh.com/video-demo)
-
----
+```
