@@ -9,7 +9,6 @@ const App = () => {
   const [filter, setFilter] = useState("all");
   const [activeIndex, setActiveIndex] = useState(null);
 
-  // 🔁 Ambil data dari API publik saat halaman dimuat
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos?_limit=10")
       .then((res) => res.json())
