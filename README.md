@@ -22,7 +22,6 @@ Website sederhana untuk menampilkan dan mengelola daftar tugas (todo list) mengg
    ```bash
    git clone https://github.com/username/penampilan-data-tugas.git
    cd penampilan-data-tugas
-````
 
 2. Install dependencies:
 
@@ -40,6 +39,7 @@ Website sederhana untuk menampilkan dan mengelola daftar tugas (todo list) mengg
 
 4. Buka di browser:
    [http://localhost:3000](http://localhost:3000)
+````
 
 ---
 
